@@ -23,7 +23,7 @@
 
                 var $this = $(this);
                 var key = $this.attr(o['attrKey']);
-                var context = $this.attr('data-sf-context') | $('body');
+                var context = (($this.attr('data-sf-context'))? $($this.parents($this.attr('data-sf-context'))[0]): $('body'));
                 
                 var valeu = $([
                     ':input[data-sf="' + key + '"]:not(:radio):not(:checkbox):not(:disabled):not(button)',
